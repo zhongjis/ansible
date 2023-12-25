@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-docker build . -t ansible-test
-docker run --rm -it ansible-test bash

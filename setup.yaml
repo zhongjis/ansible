@@ -1,0 +1,16 @@
+- name: Setup
+  hosts: localhost
+  become: false
+  pre_tasks:
+    - name: Check if Homebrew is installed
+      stat:
+        path: /opt/homebrew/bin/brew
+      register: homebrew_check
+    - name: Install Homebrew
+      shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      when: not homebrew_check.stat.exists
+
+  tasks:
+    - import_tasks: ./tasks/zsh.yaml
+    - import_tasks: ./tasks/nvim.yaml
+    # - import_tasks: ./tasks/java.yml

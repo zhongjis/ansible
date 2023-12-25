@@ -1,0 +1,27 @@
+- name: Install Neovim stable
+  homebrew:
+    name: neovim
+    state: present
+  tags:
+    - nvim
+- name: Install ripgrep
+  homebrew:
+    name: ripgrep
+    state: present
+  tags:
+    - nvim
+    - lazyvim
+- name: Install fd
+  homebrew:
+    name: fd
+    state: present
+  tags:
+    - nvim
+    - lazyvim
+- name: Install lazygit
+  homebrew:
+    name: lazygit
+    state: present
+  tags:
+    - nvim
+    - lazyvim

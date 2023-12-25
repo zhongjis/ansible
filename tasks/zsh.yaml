@@ -1,39 +1,23 @@
-- name: Install ZSH
-  apt: name=zsh
-  tags:
-    - install
-    - productivity
-    - dotfiles
-    - zsh
-- name: Change shell to zsh
-  shell: chsh -s $(which zsh)
-  tags:
-    - install
-    - dotfiles
-    - productivity
-    - zsh
-- name: Oh-My-Zsh
+- name: Check if OMZ is already installed
+  stat:
+    path: $ZSH
+  register: omz_check
+- name: Install Oh-My-Zsh
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  when: not omz_check.stat.exists
   tags:
-    - install
-    - productivity
-    - dotfiles
     - zsh
 - name: Install zsh-autosuggestions
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags:
-    - install
-    - productivity
-    - dotfiles
     - zsh
+    - plugins
 - name: Install zsh-syntax-highlighting
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
     dest: "~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
   tags:
-    - install
-    - productivity
-    - dotfiles
     - zsh
+    - plugins
