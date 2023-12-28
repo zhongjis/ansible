@@ -12,7 +12,7 @@
     - java
     - maven
 - name: Install IntelliJ Idea Ultimate Edition
-  homebrew:
+  homebrew_cask:
     name: intellij-idea
     state: present
   tags:
