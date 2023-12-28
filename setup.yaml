@@ -13,4 +13,5 @@
   tasks:
     - import_tasks: ./tasks/zsh.yaml
     - import_tasks: ./tasks/nvim.yaml
-    # - import_tasks: ./tasks/java.yml
+    - import_tasks: ./tasks/alacritty.yaml
+    # - import_tasks: ./tasks/java.yaml

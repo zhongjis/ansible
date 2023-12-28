@@ -11,6 +11,7 @@
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
+  when: not omz_check.stat.exists
   tags:
     - zsh
     - plugins
@@ -18,6 +19,14 @@
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
     dest: "~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+  when: not omz_check.stat.exists
+  tags:
+    - zsh
+    - plugins
+- name: Install exa
+  homebrew:
+    name: exa
+    state: present
   tags:
     - zsh
     - plugins

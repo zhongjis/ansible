@@ -1,0 +1,6 @@
+- name: Install Tmux
+  homebrew:
+    name: tmux
+    state: present
+  tags:
+    - tmux
