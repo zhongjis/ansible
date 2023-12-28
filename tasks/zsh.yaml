@@ -1,12 +1,16 @@
 - name: Check if OMZ is already installed
   stat:
-    path: $ZSH
+    path: /Users/zshen/.oh-my-zsh
   register: omz_check
+  tags: 
+    - zsh
+    - omz
 - name: Install Oh-My-Zsh
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
   when: not omz_check.stat.exists
   tags:
     - zsh
+    - omz
 - name: Install zsh-autosuggestions
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"

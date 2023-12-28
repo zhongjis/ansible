@@ -4,23 +4,9 @@
     state: present
   tags:
     - nvim
-- name: Install ripgrep
+- name: Install lazyvim optional dependencies
   homebrew:
-    name: ripgrep
-    state: present
-  tags:
-    - nvim
-    - lazyvim
-- name: Install fd
-  homebrew:
-    name: fd
-    state: present
-  tags:
-    - nvim
-    - lazyvim
-- name: Install lazygit
-  homebrew:
-    name: lazygit
+    name: [ripgrep, fd, lazygit]
     state: present
   tags:
     - nvim

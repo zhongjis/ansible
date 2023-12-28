@@ -1,0 +1,17 @@
+- name: Installing stow
+  homebrew:
+    name: stow
+    state: present
+  tags:
+    - dotfiles
+    - stow
+- name: Cloning dotfiles-awesome
+  ansible.builtin.git:
+    repo: "git@github.com:zhongjis/dotfiles-awesome.git"
+    dest: "{{ lookup('env', 'HOME') }}/dotfiles-awesome"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main
+  tags:
+    - dotfiles
