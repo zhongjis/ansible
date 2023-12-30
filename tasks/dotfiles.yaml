@@ -9,9 +9,12 @@
   ansible.builtin.git:
     repo: "git@github.com:zhongjis/dotfiles-awesome.git"
     dest: "{{ lookup('env', 'HOME') }}/dotfiles-awesome"
-    recursive: yes
-    update: yes
-    accept_hostkey: yes
+    update: true
     version: main
   tags:
+    - dotfiles
+- name: Stow files
+  shell: cd $HOME/dotfiles-awesome && sudo ./setup.sh
+  tags:
+    - stow
     - dotfiles
