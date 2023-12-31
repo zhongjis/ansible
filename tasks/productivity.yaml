@@ -1,0 +1,16 @@
+- name: Install Yabai
+  homebrew:
+    name: koekeishiya/formulae/yabai
+    state: present
+  tags:
+    - install
+    - productivity
+    - yabai
+- name: Install Skhd
+  homebrew:
+    name: skhd
+    state: present
+  tags:
+    - install
+    - productivity
+    - skhd

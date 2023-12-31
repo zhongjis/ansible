@@ -3,11 +3,13 @@
     name: alacritty
     state: present
   tags:
+    - install
     - alacritty
 - name: Tap Nerd Font cask
   homebrew_tap:
     name: homebrew/cask-fonts
   tags:
+    - install
     - alacritty
     - dependency
 - name: Install agave Nerd Font
@@ -15,5 +17,6 @@
     name: homebrew/cask-fonts/font-agave-nerd-font
     state: present
   tags:
+    - install
     - alacritty
     - dependency

@@ -13,8 +13,15 @@
     version: main
   tags:
     - dotfiles
-- name: Stow files
-  shell: cd $HOME/dotfiles-awesome && sudo ./setup.sh
+- name: Stow files for Mac
+  shell: cd $HOME/dotfiles-awesome && ./darwin.sh
+  when: ansible_os_family == "Darwin"
+  tags:
+    - stow
+    - dotfiles
+- name: Stow files for Debian
+  shell: cd $HOME/dotfiles-awesome && ./ubuntu.sh
+  when: ansible_os_family == "Debian"
   tags:
     - stow
     - dotfiles
