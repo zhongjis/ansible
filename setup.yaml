@@ -16,3 +16,4 @@
     - import_tasks: ./tasks/alacritty.yaml
     - import_tasks: ./tasks/java.yaml
     - import_tasks: ./tasks/dotfiles.yaml
+    - import_tasks: ./tasks/tmux.yaml
