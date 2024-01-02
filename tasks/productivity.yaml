@@ -14,3 +14,11 @@
     - install
     - productivity
     - skhd
+- name: Install dependency packages needed for skhd shortcut
+  homebrew:
+    name: xarg, jq
+    state: present
+  tags:
+    - install
+    - productivity
+    - skhd
