@@ -1,0 +1,14 @@
+- name: Install Python
+  homebrew:
+    name: python
+    state: present
+  tags:
+    - install
+    - python
+- name: Install MiniConda
+  homebrew:
+    name: miniconda
+    state: present
+  tags:
+    - install
+    - python
